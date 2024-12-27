@@ -1,0 +1,202 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #2c3e50;
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegacyImage;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+  background-color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  width: 100%;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+h1 {
+  color: #1a202c;
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.calculator-section {
+  margin-bottom: 2rem;
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.calculator-section h2 {
+  color: #e53e3e;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.input-wrapper label {
+  color: #4a5568;
+  width: 140px;
+  text-align: right;
+  font-size: 0.95rem;
+}
+
+input[type="number"] {
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 0.5em 0.75em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: white;
+  color: #2d3748;
+  width: 180px;
+  margin-right: 0.5rem;
+  transition: border-color 0.15s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.input-wrapper::after {
+  content: "%";
+  color: #4a5568;
+  font-size: 1em;
+  margin-left: -0.5rem;
+}
+
+.input-wrapper.amount::after {
+  content: "$";
+}
+
+.result-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  height: fit-content;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.result-item {
+  background: #f8fafc;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-label {
+  color: #1a202c;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.result-item span:last-child {
+  color: #2d3748;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+.copy-button {
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  color: #718096;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.copy-button:hover {
+  color: #4299e1;
+}
+
+.copy-button.copied {
+  color: #48bb78;
+}
+
+.copy-button.copied::before {
+  content: "✓";
+  font-size: 1rem;
+}
+
+.copy-button::after {
+  content: "Copiar";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #1a202c;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+}
+
+@media (max-width: 768px) {
+  .calculator-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  #app {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.875rem;
+  }
+}
